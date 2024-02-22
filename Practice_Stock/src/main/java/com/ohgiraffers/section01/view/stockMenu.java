@@ -6,6 +6,17 @@ import com.ohgiraffers.section01.dto.Member;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/*
+* 1. 내 정보 추가(이름 name, 현금입금 money)
+* 2. 현금 추가입금(계좌account에 현금추가)
+* 3. 주식 구매(현금 마이너스, 주식 추가)
+* 4. 주식 판매(현금 추가, 주식 빼기) : 판매 금액을 랜덤으로 (-100~100%) , 상장폐지(-100%일때)
+*    내가 갖고 있는 주식 리스트 내역 출력
+*    주식 선택
+*    무조건 랜덤 한번 돌리고 판매 여부 묻기 내정보에 업데이트
+* 5. 내 정보 확인(이름, 계좌(현금, 주식stockList))
+* */
+
 public class stockMenu {
     private Scanner sc = new Scanner(System.in);
     private stockManager sm = new stockManager();
@@ -85,7 +96,7 @@ public class stockMenu {
             }
 
         }catch (InputMismatchException e){
-            System.out.println("20억이 넘는 금액을 입금하실 수 없습니다.");
+            System.out.println("유효하지 않은 숫자입니다. 다시 입력해주세요.");
             sc.nextLine();
         }
     }
